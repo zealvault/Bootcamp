@@ -3,7 +3,7 @@ import javafx.scene.shape.PathElement;
 import java.util.Scanner;
 
 /**
- * Created by shubham on 15/8/16.
+ * Created by vishal on 15/8/16.
  */
 public class Patterns {
     static final int WIDTH =2;
@@ -14,16 +14,16 @@ public class Patterns {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter number of boxes:");
         noOfBox = scanner.nextInt();
-        Patterns pattern = new Patterns();
-        pattern.drawBoxes(noOfBox);
+        //Patterns pattern = new Patterns();
+        Patterns.drawBoxes(noOfBox);
         System.out.println("\nEnter width of pattern:");
         width = scanner.nextInt();
         System.out.println("Enter height of pattern:");
         height = scanner.nextInt();
-        pattern.drawTiles(width,height);
+        Patterns.drawTiles(width,height);
     }
 
-    public void drawBoxes(int noOfBoxes){
+    public static void drawBoxes(int noOfBoxes){
         int i;
         int j;
         System.out.print("+");
@@ -46,7 +46,7 @@ public class Patterns {
         }
 
     }
-    public void drawTiles(int width , int height) {
+    public static void drawTiles(int width , int height) {
         int i, j;
         for(j = 0;j<height;j++) {
 
