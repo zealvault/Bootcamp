@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class LoanPayment
 {
-
-    public void SimpleLoan()
+    private static final int MONTH = 12;
+    public static  void SimpleLoan()
     {
         double rate;
 
@@ -28,15 +28,15 @@ public class LoanPayment
 
         for(int i=1;i<=12;i++)
         {
-            loan = (loan + loan*(rate/12))-monthlyPayment;
-            System.out.println(i+"         "+loan);
+            loan = (loan + loan*(rate/MONTH)) - monthlyPayment;
+            System.out.println(i+"          "+loan);
         }
     }
-    public void DetailedLoan()
+    public static void DetailedLoan()
     {
         double balance;
         double interestRate;
-        double monthlypayment;
+        double monthlyPayment;
         int months;
         double remaining;
         Scanner scanner = new Scanner(System.in);
@@ -50,7 +50,7 @@ public class LoanPayment
         System.out.println("Enter no of months");
         months=scanner.nextInt();
         System.out.println("The initial loan is "+"$"+balance);
-        System.out.println("The monthly payment is "+"$"+monthlypayment);
+        System.out.println("The monthly payment is "+"$"+monthlyPayment);
         System.out.println("The annual interest rate is"+interestRate);
 
         System.out.println("Month\t\t\tBalance\t\t\t\t\tPayment\t\t\t\tRemaining");
@@ -59,16 +59,16 @@ public class LoanPayment
         {
 
             balance = (balance + balance*(interestRate/1200));
-            remaining = balance - monthlypayment;
-            System.out.println(i+"         "+balance+"            " + monthlypayment + "        " + remaining);
-            balance=balance-monthlypayment;
+            remaining = balance - monthlyPayment;
+            System.out.println(i+"         "+balance+"            " + monthlyPayment + "        " + remaining);
+            balance=balance-monthlyPayment;
         }
     }
     public static void main(String args[])
     {
-        LoanPayment lpDetail = new LoanPayment();
-        lpDetail.SimpleLoan();
-        lpDetail.DetailedLoan();
+       
+        LoanPayment.SimpleLoan();
+        LoanPayment.DetailedLoan();
     }
 
 
